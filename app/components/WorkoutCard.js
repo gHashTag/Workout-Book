@@ -18,7 +18,7 @@ import EntypeIcon from 'react-native-vector-icons/Entypo';
 import IonicIcon from 'react-native-vector-icons/Ionicons'
 import OctiIcons from 'react-native-vector-icons/Octicons';
 
-
+import Swiper from 'react-native-page-swiper';
 import { NavigationActions } from 'react-navigation';
 
 class WorkoutCard extends Component {
@@ -26,22 +26,19 @@ class WorkoutCard extends Component {
     super(props)
   }
 
-  componentDidMount(){
-  }
-
-
   renderExercises(){
     let exercisesView = [];
-
-    this.props.workout.exercises.forEach(exercise => {
+    
+    this.props.workout.exercises.forEach((exercise,id) => {
       exercisesView.push(
-        <View>
+        <View key = {id} style={styles.setsContainer}>
           <Text style={[styles.exerciseTitleStyle, customStyles.text(17, 'light', 'white')]}>{exercise.name}</Text>
           <View style={styles.setsContainer}>
               {this.renderSet(exercise.sets)}
           </View>
         </View>
       )
+      id++;
     })
 
     return exercisesView;
@@ -69,7 +66,6 @@ class WorkoutCard extends Component {
       )
     })
     return setsView;
-
   }
 
 
@@ -127,9 +123,11 @@ class WorkoutCard extends Component {
           </View>
 
           <View style={styles.exercisesInfoContainer}>
-            <ScrollView horizontal={true}>
+            <Swiper
+              style={styles.wrapper}
+              pager={false}>
               {this.renderExercises()}
-            </ScrollView>
+            </Swiper>
           </View>
         </View>
       </View>
@@ -197,7 +195,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     marginBottom: 10
-  }
+  },
+  slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5',
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9',
+  },
 })
 
 export default connect(null, mapDispatchToProps)(WorkoutCard)

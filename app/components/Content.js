@@ -6,6 +6,7 @@ import {
   View, Text, StyleSheet, ScrollView, Image, Animated
 } from 'react-native'
 
+import moment from 'moment';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -29,6 +30,7 @@ class Content extends Component {
 
   render(){
     const {workout} = this.props;
+    //console.log(moment(this.props.timer.stoppedAt).format('HH:mm:ss'));
 
     return (
       <View style = {[styles.mainContainer, {opacity: this.props.showContent ? 0 : 1}]}>
@@ -43,7 +45,8 @@ class Content extends Component {
 function mapStateToProps(state){
   return{
     workout: state.workouts,
-    showContent: state.ui.hiddenMainScreen
+    showContent: state.ui.hiddenMainScreen,
+    timer: state.timer
   }
 }
 

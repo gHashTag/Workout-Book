@@ -16,7 +16,7 @@ import {startTimerAction, stopTimerAction} from '../actions/TimerActions'
 import {connect} from 'react-redux'
 import {Colors} from '../common/constStyles'
 import {customStyles} from '../common/customStyles'
-import ExerciseCard from '../components/ExerciseCard'
+import ExerciseCard from '../components/workoutscreen/ExerciseCard'
 
 import IonicIcon from 'react-native-vector-icons/Ionicons'
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'

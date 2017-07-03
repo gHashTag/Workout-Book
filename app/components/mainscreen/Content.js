@@ -10,14 +10,11 @@ import moment from 'moment';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {getCompletedWorkouts, getLastWorkout} from '../actions/WorkoutActions'
+import {getCompletedWorkouts, getLastWorkout} from '../../actions/WorkoutActions'
 
-import { Colors } from '../common/constStyles';
+import { Colors } from '../../common/constStyles';
 
 import WorkoutCard from './WorkoutCard'
-import Calendar from './calendar/Calendar'
-import CaloriesCard from './CaloriesCard'
-import SleepCard from './SleepCard'
 
 class Content extends Component {
   constructor(props){
@@ -30,8 +27,6 @@ class Content extends Component {
 
   render(){
     const {workout} = this.props;
-    //console.log(moment(this.props.timer.stoppedAt).format('HH:mm:ss'));
-
     return (
       <View style = {[styles.mainContainer, {opacity: this.props.showContent ? 0 : 1}]}>
           <ScrollView style = {styles.infoContainer}>

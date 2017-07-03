@@ -6,9 +6,9 @@ import {
   View, Text, StyleSheet
 } from 'react-native'
 
-import {Colors} from '../common/constStyles';
-import { customStyles} from '../common/customStyles';
-import { compoundStyles} from '../common/compoundStyles';
+import {Colors} from '../../common/constStyles';
+import { customStyles} from '../../common/customStyles';
+import { compoundStyles} from '../../common/compoundStyles';
 
 
 export default class SetCard extends Component {

@@ -14,9 +14,9 @@ import {bindActionCreators} from 'redux'
 import { NavigationActions } from 'react-navigation';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Header from '../components/Header'
-import Content from '../components/Content'
-import Footer from '../components/Footer'
+import Header from '../components/mainscreen/Header'
+import Content from '../components/mainscreen/Content'
+import Footer from '../components/mainscreen/Footer'
 
 class Main extends Component {
   render () {

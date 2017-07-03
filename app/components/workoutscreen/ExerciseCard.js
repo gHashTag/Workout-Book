@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {View, StyleSheet, Text} from 'react-native'
 
-import {customStyles} from '../common/customStyles'
-import {Colors} from '../common/constStyles'
-import {compoundStyles} from '../common/compoundStyles'
+import {customStyles} from '../../common/customStyles'
+import {Colors} from '../../common/constStyles'
+import {compoundStyles} from '../../common/compoundStyles'
 
-import SetCard from './SetCard'
+import SetCard from '../shared/SetCard'
 
 class ExerciseCard extends Component {
   render(){

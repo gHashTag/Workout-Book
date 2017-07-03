@@ -9,10 +9,10 @@ import {
 
 import moment from 'moment';
 
-import { Colors } from '../common/constStyles';
-import { customStyles} from '../common/customStyles';
-import { compoundStyles} from '../common/compoundStyles';
-import SetCard from './SetCard'
+import { Colors } from '../../common/constStyles';
+import { customStyles} from '../../common/customStyles';
+import { compoundStyles} from '../../common/compoundStyles';
+import SetCard from '../shared/SetCard'
 
 import EntypeIcon from 'react-native-vector-icons/Entypo';
 import IonicIcon from 'react-native-vector-icons/Ionicons'
@@ -28,7 +28,7 @@ class WorkoutCard extends Component {
 
   renderExercises(){
     let exercisesView = [];
-    
+
     this.props.workout.exercises.forEach((exercise,id) => {
       exercisesView.push(
         <View key = {id} style={styles.setsContainer}>

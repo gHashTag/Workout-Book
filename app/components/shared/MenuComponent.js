@@ -3,15 +3,15 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native'
 import { DrawerItems } from 'react-navigation';
 
-import {Colors} from '../common/constStyles'
-import {customStyles} from '../common/customStyles'
+import {Colors} from '../../common/constStyles'
+import {customStyles} from '../../common/customStyles'
 
 class MenuComponent extends Component{
   render(){
     return (
       <View style={styles.menu}>
         <View style={styles.headerContainer}>
-          <Image style={styles.profileImage} source={require('../assets/doge.jpg')}></Image>
+          <Image style={styles.profileImage} source={require('../../assets/doge.jpg')}></Image>
           <View style={styles.labelContainer}>
             <Text style={styles.nameLabel}>Alex Shirokov</Text>
             <Text style={styles.statusLabel}>

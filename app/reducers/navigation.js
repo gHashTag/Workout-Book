@@ -14,7 +14,7 @@ const navigation = (state = initialState, action) => {
         break;
     case 'StartWorkout':
         nextState = AppNavigator.router.getStateForAction(
-            NavigationActions.navigate({ routeName: 'StartWorkout' }),
+            NavigationActions.navigate({ routeName: 'Workout' }),
             state
          );
         break;

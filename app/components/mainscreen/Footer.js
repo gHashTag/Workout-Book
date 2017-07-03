@@ -14,9 +14,9 @@ import {
 } from 'react-native'
 import {connect} from 'react-redux'
 
-import { Colors } from '../common/constStyles';
-import { customStyles} from '../common/customStyles';
-import {toggleMainScreen} from '../actions/UIActions'
+import { Colors } from '../../common/constStyles';
+import { customStyles} from '../../common/customStyles';
+import {toggleMainScreen} from '../../actions/UIActions'
 
 
 import Icon from 'react-native-vector-icons/Entypo';

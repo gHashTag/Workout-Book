@@ -6,14 +6,14 @@ import { connect } from 'react-redux';
 import { addNavigationHelpers, DrawerNavigator } from 'react-navigation';
 
 import MainScreen from './MainScreen';
-import StartWorkoutScreen from './StartWorkoutScreen';
+import WorkoutScreen from './WorkoutScreen';
 import HistoryScreen from './HistoryScreen';
 
-import MenuComponent from '../components/MenuComponent';
+import MenuComponent from '../components/shared/MenuComponent';
 
 const routeConfiguration = {
   Main: { screen: MainScreen },
-  StartWorkout: {screen: StartWorkoutScreen},
+  Workout: {screen: WorkoutScreen},
   History: {screen: HistoryScreen}
 }
 

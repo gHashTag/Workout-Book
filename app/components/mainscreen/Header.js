@@ -10,8 +10,8 @@ import {
   StatusBar
 } from 'react-native'
 
-import { Colors } from '../common/constStyles';
-import { customStyles} from '../common/customStyles';
+import { Colors } from '../../common/constStyles';
+import { customStyles} from '../../common/customStyles';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -28,7 +28,7 @@ class Header extends Component {
             <Icon name="ios-menu" size={35} color='#00BCD4' style={styles.icon}/>
           </View>
           <View style={styles.welcomeContainer}>
-            <Image style={styles.profileImage} source={require('../assets/doge.jpg')}></Image>
+            <Image style={styles.profileImage} source={require('../../assets/doge.jpg')}></Image>
             <Text style={[styles.welcomeMessage, customStyles.text(20,'light','white')]}>{welcomeMessage}</Text>
             <Text style={[styles.welcomeMessage, customStyles.text(20,'light','white')]}>{readyMessage}</Text>
           </View>

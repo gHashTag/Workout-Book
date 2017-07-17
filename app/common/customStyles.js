@@ -6,5 +6,9 @@ export const customStyles = {
      fontFamily: font,
      color: col
    }
+ },
+
+ size: function(dimension, per){
+   return dimension * (per/ 100)
  }
 }

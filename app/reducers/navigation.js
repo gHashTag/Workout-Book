@@ -23,6 +23,11 @@ const navigation = (state = initialState, action) => {
             NavigationActions.navigate({routeName: 'History'})
         );
         break;
+    case 'PickExercise':
+        nextState = AppNavigator.router.getStateForAction(
+            NavigationActions.navigate({routeName: 'PickExercise'})
+          );
+        break;
     case 'Back':
       nextState = AppNavigator.router.getStateForAction(
             NavigationActions.back(),

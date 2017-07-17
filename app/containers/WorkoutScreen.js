@@ -85,7 +85,7 @@ class StartWorkoutScreen extends Component {
         <TouchableOpacity onPress={this.switchSubMenu.bind(this)}>
           <EntypeIcon name="chevron-thin-left" size={23} style={{color:'white'}}/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.props.pickExercise}>
           <IonicIcon name='ios-add-circle-outline' size={30} style={styles.iconStyle}/>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -112,7 +112,6 @@ class StartWorkoutScreen extends Component {
 
         <View style={styles.contentContainer}>
           <ScrollView>
-            <ExerciseCard></ExerciseCard>
           </ScrollView>
         </View>
       </View>
@@ -178,6 +177,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   navigateBack: () => dispatch({type: 'Back'}),
+  pickExercise: () => dispatch({type: 'PickExercise'}),
   startTimer: () => dispatch(startTimerAction()),
   stopTimer: () => dispatch(stopTimerAction())
 })

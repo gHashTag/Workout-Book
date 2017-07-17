@@ -9,3 +9,5 @@ export const TOGGLE_MAIN_SCREEN = 'toggle_main_screen';
 export const START_TIMER = 'start_timer';
 export const STOP_TIMER = 'stop_timer';
 export const RESET_TIMER = 'reset_timer';
+
+export const SELECT_EXERCISE = 'select_exercise';

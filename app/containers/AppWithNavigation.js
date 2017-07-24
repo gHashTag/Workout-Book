@@ -9,13 +9,14 @@ import MainScreen from './MainScreen';
 import WorkoutScreen from './WorkoutScreen';
 import HistoryScreen from './HistoryScreen';
 import PickExerciseScreen from './PickExerciseScreen';
-
+import WorkoutPlansScreen from './WorkoutPlansScreen';
 import MenuComponent from '../components/shared/MenuComponent';
 
 const routeConfiguration = {
   Main: { screen: MainScreen },
-  Workout: {screen: WorkoutScreen},
   History: {screen: HistoryScreen},
+  WorkoutPlans: {screen: WorkoutPlansScreen},
+  Workout: {screen: WorkoutScreen},
   PickExercise: {screen: PickExerciseScreen}
 }
 

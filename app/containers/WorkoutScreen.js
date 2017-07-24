@@ -14,6 +14,7 @@ import {
 import {startTimerAction, stopTimerAction} from '../actions/TimerActions'
 
 import {connect} from 'react-redux'
+
 import {Colors} from '../common/constStyles'
 import {customStyles} from '../common/customStyles'
 import ExerciseCard from '../components/workoutscreen/ExerciseCard'
@@ -33,7 +34,6 @@ class StartWorkoutScreen extends Component {
       showTime: true
     }
   }
-
   componentWillMount(){
     this.props.startTimer();
   }

@@ -17,11 +17,13 @@ class Header extends Component {
     return(
       <View style={styles.headerContainer}>
         <StatusBar backgroundColor='#363656' barStyle="light-content"></StatusBar>
-          <Icon name="ios-close-outline" size={55} style={[styles.iconStyle, {marginLeft: 15}]}/>
-          <Text style={[styles.titleStyle, customStyles.text(22, 'light', 'white')]}>
-            Choose Exercises
-          </Text>
-          <Icon name="ios-checkmark-outline" size={55} style={[styles.iconStyle, {marginRight: 15}]}/>
+        <TouchableOpacity>
+          <Icon name="ios-close-outline" size={55} style={[styles.iconStyle, {marginLeft: 15}]} onPress={this.props.onPressBack}/>
+        </TouchableOpacity>
+        <Text style={[styles.titleStyle, customStyles.text(22, 'light', 'white')]}>
+          Choose Exercises
+        </Text>
+        <Icon name="ios-checkmark-outline" size={55} style={[styles.iconStyle, {marginRight: 15}]}/>
       </View>
     )
   }
@@ -84,20 +86,20 @@ class Content extends Component {
         this.bubbleAnimatedValues[i],
         {
           toValue: Math.random() * 15 + 5,
-          duration: 1200
-      }
-    ));
-    animations.push(Animated.timing(
-      this.textAnimatedValues[i],
-      {
-        toValue: Math.random() > 0.5 ? (Math.random() * 10 + 1) : (-1 * (Math.random() * 10 + 1)),
-        duration: 200
-    }
-  ));
-  };
+          duration: 1000
+        }
+      ));
+      animations.push(Animated.timing(
+        this.textAnimatedValues[i],
+        {
+          toValue: Math.random() > 0.5 ? (Math.random() * 10 + 1) : (-1 * (Math.random() * 10 + 1)),
+          duration: 200
+        }
+      ));
+    };
 
-  Animated.parallel(animations).start(() => { this.animate() })
-}
+    Animated.parallel(animations).start(() => { this.animate() })
+  }
 
 
   filterExers (id, filter){
@@ -178,7 +180,11 @@ class Content extends Component {
       backgroundColor: Colors.lightBlue,
       borderRadius: 50
     }
-    const textStyle = [customStyles.text(12, 'light', 'white'), { textAlign: 'center'}];
+    const textStyle = [customStyles.text(12, 'light', 'white'), {
+      textAlign: 'center',
+      marginRight: 10,
+      marginLeft: 10
+    }];
 
     return (
       <TouchableOpacity key={exercise.id} onPress={() => this.onUnselectExercise(exercise)}>
@@ -200,7 +206,11 @@ class Content extends Component {
       backgroundColor: Colors.lightGreen,
       borderRadius: 50
     };
-    const textStyle = [customStyles.text(16, 'light', 'white'), {textAlign: 'center'}];
+    const textStyle = [customStyles.text(16, 'light', 'white'), {
+      textAlign: 'center',
+      marginLeft: 10,
+      marginRight: 10
+    }];
 
     let exersColumns = [];
     const availableExercisesCount = exercisesList[this.state.activeFilter].count;
@@ -216,7 +226,7 @@ class Content extends Component {
 
         const bubbleMoveStyle= { marginVertical: this.bubbleAnimatedValues[currentId]};
         const textMoveStyle = Math.random() > 0.5 ? {marginTop: this.bubbleAnimatedValues[currentId]}
-                                                  : {marginBottom: this.bubbleAnimatedValues[currentId]};
+        : {marginBottom: this.bubbleAnimatedValues[currentId]};
 
         const visibleStyle = { opacity: this.state.isExerciseVisible[availableExercises[id].id] ? 1 : 0};
 
@@ -290,7 +300,7 @@ class PickExerciseScreen extends Component {
   render(){
     return(
       <View style = {styles.mainContainer}>
-        <Header></Header>
+        <Header onPressBack={() => this.props.navigateBack()}></Header>
         <Info></Info>
         <Content selectExercise={this.props.selectExercise}></Content>
       </View>
@@ -329,7 +339,6 @@ const styles = StyleSheet.create({
   selExersContent: {
     flex: 8,
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
     borderBottomWidth: 0.2,
     borderTopWidth: 0.2,
@@ -371,6 +380,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  navigateBack: () => dispatch({type: 'Back'}),
   selectExercise: (id) => dispatch(selectExerciseAction(id))
 })
 

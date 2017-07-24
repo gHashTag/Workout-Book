@@ -3,18 +3,18 @@ import { NavigationActions } from 'react-navigation';
 
 const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Default'));
 
-const tabnavigation = (state = initialState, action) => {
+const plansnavigation = (state = initialState, action) => {
   let nextState;
   switch(action.type){
     case 'Default':
         nextState = AppNavigator.router.getStateForAction(
-          NavigationActions.navigate({ routeName: 'Main' }),
+          NavigationActions.navigate({ routeName: 'Default' }),
           state
         );
         break;
     case 'Custom':
         nextState = AppNavigator.router.getStateForAction(
-            NavigationActions.navigate({ routeName: 'StartWorkout' }),
+            NavigationActions.navigate({ routeName: 'Custom' }),
             state
          );
         break;
@@ -26,4 +26,4 @@ const tabnavigation = (state = initialState, action) => {
   return nextState || state;
 }
 
-export default tabnavigation
+export default plansnavigation;

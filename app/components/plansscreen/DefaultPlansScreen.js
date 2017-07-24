@@ -9,7 +9,6 @@ import {Colors} from '../../common/constStyles';
 import { customStyles} from '../../common/customStyles';
 import {workoutPlansList} from '../../common/workoutPlansList';
 
-
 class DefaultPlansScreen extends Component {
   constructor(props){
     super(props)

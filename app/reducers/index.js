@@ -3,7 +3,8 @@
 import { combineReducers } from 'redux'
 
 import navigation from './navigation'
-import tabnavigation from './tabnavigation'
+import plansnavigation from './plansnavigation'
+import customplansnavigation from './customplansnavigation'
 import workouts from './workouts'
 import calendar from './calendar'
 import ui from './ui'
@@ -12,7 +13,8 @@ import exercises from './exercises'
 
 const reducers = combineReducers({
   navigation,
-  tabnavigation,
+  plansnavigation,
+  customplansnavigation,
   workouts,
   calendar,
   ui,

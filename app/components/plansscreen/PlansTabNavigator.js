@@ -59,7 +59,7 @@ PlansTabNavigation.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
 const mapStateToProps = state => ({
-  navigation: state.tabnavigation
+  navigation: state.plansnavigation
 });
 
 export default connect(mapStateToProps)(PlansTabNavigation);

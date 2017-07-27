@@ -28,7 +28,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  createNewPlan: () => dispatch({type: 'NewPlan'})
+  createNewPlan: () => dispatch({type: 'NewCustomPlan'})
 })
 
 

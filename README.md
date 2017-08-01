@@ -1,13 +1,10 @@
 # Workout Book
 
-Workout Tracking App Concept
-
 Inspired by: https://www.behance.net/gallery/27399145/Workout-Book-workout-tracking-app-concept 
 
 ## Features
 Main Screen                 
-:-------------------------:
-<img src="https://github.com/AleksShirokov/Workout-Book/blob/master/resources/plansanimation.gif" height="480" width="270">
+<img src="https://github.com/AleksShirokov/Workout-Book/blob/master/resources/mainscreenanimation.gif" height="480" width="270">
 
 ## Setup
 
